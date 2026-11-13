@@ -26,7 +26,7 @@ build:
     - python -m pip install ./um_ppibm -vv
     - python -m pip install ./um_spiral_search -vv
     - python -m pip install ./um_utils -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -50,11 +50,11 @@ tests:
   - python:
       # A list of modules that the test will try to import
       imports:
-      - mule
-      - um_packing
-      - um_ppibm
-      - um_spiral_search
-      - um_utils
+        - mule
+        - um_packing
+        - um_ppibm
+        - um_spiral_search
+        - um_utils
       # Also run `pip check` to verify the integrity 
       pip_check: true
   - script:
@@ -62,12 +62,12 @@ tests:
       - mule-editmask --help
       - pytest
     requirements:
-        run:
-            - pytest
+      run:
+        - pytest
     files:
-        recipe:
-            - mule/lib/mule/tests
-            - mule/lib/um_utils/tests
+      recipe:
+        - mule/lib/mule/tests
+        - mule/lib/um_utils/tests
 
 about:
   homepage: https://github.com/MetOffice/mule
